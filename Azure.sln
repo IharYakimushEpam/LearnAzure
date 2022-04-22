@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "StaticWebApp.React", "StaticWebApp\StaticWebApp.React\StaticWebApp.React.esproj", "{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static Web App", "Static Web App", "{3074E476-1843-433D-B727-9B54F20CF959}"
+	ProjectSection(SolutionItems) = preProject
+		StaticWebApp\run_azure_emulator.ps1 = StaticWebApp\run_azure_emulator.ps1
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticWebApp.Api", "StaticWebApp\StaticWebApp.Api\StaticWebApp.Api.csproj", "{8A619E64-3693-4A4C-9432-11191C8C11E8}"
 EndProject
