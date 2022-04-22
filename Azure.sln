@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "StaticWebApp.React", "StaticWebApp\StaticWebApp.React\StaticWebApp.React.esproj", "{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static Web App", "Static Web App", "{3074E476-1843-433D-B727-9B54F20CF959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB} = {3074E476-1843-433D-B727-9B54F20CF959}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9977AC2A-35E5-4E23-B4BF-D14FE8A94BFF}
+	EndGlobalSection
+EndGlobal
