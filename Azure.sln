@@ -10,7 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static Web App", "Static We
 		StaticWebApp\run_azure_emulator.ps1 = StaticWebApp\run_azure_emulator.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticWebApp.Api", "StaticWebApp\StaticWebApp.Api\StaticWebApp.Api.csproj", "{8A619E64-3693-4A4C-9432-11191C8C11E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticWebApp.Api", "StaticWebApp\StaticWebApp.Api\StaticWebApp.Api.csproj", "{8A619E64-3693-4A4C-9432-11191C8C11E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{1FB7B92B-AFD7-4834-A95C-E048B0F6BD83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage.Sample", "Storage\Storage.Sample\Storage.Sample.csproj", "{0B071151-E109-47B8-92B9-A29DE33101BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +32,10 @@ Global
 		{8A619E64-3693-4A4C-9432-11191C8C11E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A619E64-3693-4A4C-9432-11191C8C11E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A619E64-3693-4A4C-9432-11191C8C11E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B071151-E109-47B8-92B9-A29DE33101BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B071151-E109-47B8-92B9-A29DE33101BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B071151-E109-47B8-92B9-A29DE33101BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B071151-E109-47B8-92B9-A29DE33101BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +43,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{75F5D373-ED6B-44D8-A85C-95C33A37BCAB} = {3074E476-1843-433D-B727-9B54F20CF959}
 		{8A619E64-3693-4A4C-9432-11191C8C11E8} = {3074E476-1843-433D-B727-9B54F20CF959}
+		{0B071151-E109-47B8-92B9-A29DE33101BC} = {1FB7B92B-AFD7-4834-A95C-E048B0F6BD83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9977AC2A-35E5-4E23-B4BF-D14FE8A94BFF}
