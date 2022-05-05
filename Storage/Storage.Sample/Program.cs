@@ -1,7 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Storage.Sample;
 
-Console.WriteLine("Hello, World!");
-
-QueueSample.Run();
+Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration(builder => builder.AddUserSecrets(typeof(Program).Assembly))
+    .ConfigureServices(services =>
+    {
+        services.AddHostedService<QueueSample>();
+    }).Build().Run();
