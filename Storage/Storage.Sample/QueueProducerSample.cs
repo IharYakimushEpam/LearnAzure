@@ -30,7 +30,7 @@ public class QueueProducerSample : BackgroundService
                 TimeSpan.FromHours(1),
                 stoppingToken);
 
-            Console.WriteLine(send);
+            Console.WriteLine($"send {send.Value.MessageId}");
 
             await Task.Delay(3000, stoppingToken);
         }

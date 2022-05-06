@@ -1,4 +1,6 @@
-﻿using Azure.Storage.Queues;
+﻿using Azure;
+using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
@@ -18,13 +20,15 @@ public class QueueConsumerSample : BackgroundService
 
         QueueClient client = new QueueClient(this.Configuration["AzureStorageTest"], "qwe");
 
-        var response = await client.CreateIfNotExistsAsync(cancellationToken: stoppingToken);
+        await client.CreateIfNotExistsAsync(cancellationToken: stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            var msg = await client.ReceiveMessageAsync(null, stoppingToken);
-
-            Console.WriteLine(msg.Value);
+            Response<QueueMessage>? msg = await client.ReceiveMessageAsync(null, stoppingToken);
+            if (msg?.Value != null)
+            {
+                Console.WriteLine($"{msg.Value.MessageId} {msg.Value.MessageText}");
+            }
         }
     }
 }
