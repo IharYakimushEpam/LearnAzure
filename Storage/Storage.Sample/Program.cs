@@ -7,7 +7,8 @@ Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration(builder => builder.AddUserSecrets(typeof(Program).Assembly))
     .ConfigureServices(services =>
     {
-        // create user secret with AzureStorageTest key
         services.AddHostedService<QueueProducerSample<Instance1>>();
+        services.AddHostedService<QueueProducerSample<Instance2>>();
+
         services.AddHostedService<QueueConsumerSample<Instance1>>();
     }).Build().Run();

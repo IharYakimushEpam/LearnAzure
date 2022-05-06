@@ -22,12 +22,27 @@ public class QueueConsumerSample<T> : BackgroundService
 
         await client.CreateIfNotExistsAsync(cancellationToken: stoppingToken);
 
+        TimeSpan processingTimeout = TimeSpan.FromSeconds(30);
+
         while (!stoppingToken.IsCancellationRequested)
         {
-            Response<QueueMessage>? msg = await client.ReceiveMessageAsync(null, stoppingToken);
+            Response<QueueMessage>? msg = await client.ReceiveMessageAsync(processingTimeout, stoppingToken);
+
             if (msg?.Value != null)
             {
-                Console.WriteLine($"{typeof(T).Name} receive {msg.Value.MessageId} {msg.Value.MessageText}");
+                CancellationTokenSource cts = CancellationTokenSource.CreateLinkedTokenSource(stoppingToken);
+                cts.CancelAfter(processingTimeout - TimeSpan.FromSeconds(5));
+
+                await Task.Run(() =>
+                {
+                    Console.WriteLine($"{typeof(T).Name} receive {msg.Value.MessageId} {msg.Value.MessageText}");
+
+                }, cts.Token);
+
+                if (!cts.Token.IsCancellationRequested)
+                {
+                    await client.DeleteMessageAsync(msg.Value.MessageId, msg.Value.PopReceipt, stoppingToken);
+                }
             }
         }
     }
