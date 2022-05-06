@@ -4,11 +4,11 @@ using Microsoft.Extensions.Hosting;
 
 namespace Storage.Sample;
 
-public class QueueSample : BackgroundService
+public class QueueConsumerSample : BackgroundService
 {
     public IConfiguration Configuration { get; }
 
-    public QueueSample(IConfiguration configuration)
+    public QueueConsumerSample(IConfiguration configuration)
     {
         Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
@@ -20,6 +20,11 @@ public class QueueSample : BackgroundService
 
         var response = await client.CreateIfNotExistsAsync(cancellationToken: stoppingToken);
 
-        Console.WriteLine(response);
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            var msg = await client.ReceiveMessageAsync(null, stoppingToken);
+
+            Console.WriteLine(msg.Value);
+        }
     }
 }
