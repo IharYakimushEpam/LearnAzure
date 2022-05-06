@@ -4,7 +4,7 @@ using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace Storage.Sample;
+namespace Storage.Sample.Queue;
 
 public class QueueConsumerSample<T> : BackgroundService
 {

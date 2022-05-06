@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace Storage.Sample;
+namespace Storage.Sample.Queue;
 
 public class QueueProducerSample<T> : BackgroundService
 {
