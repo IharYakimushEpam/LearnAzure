@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace Storage.Sample;
 
-public class QueueConsumerSample : BackgroundService
+public class QueueConsumerSample<T> : BackgroundService
 {
     public IConfiguration Configuration { get; }
 
@@ -27,7 +27,7 @@ public class QueueConsumerSample : BackgroundService
             Response<QueueMessage>? msg = await client.ReceiveMessageAsync(null, stoppingToken);
             if (msg?.Value != null)
             {
-                Console.WriteLine($"{msg.Value.MessageId} {msg.Value.MessageText}");
+                Console.WriteLine($"{typeof(T).Name} receive {msg.Value.MessageId} {msg.Value.MessageText}");
             }
         }
     }

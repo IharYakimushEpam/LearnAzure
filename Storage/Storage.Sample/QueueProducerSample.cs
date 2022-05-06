@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace Storage.Sample;
 
-public class QueueProducerSample : BackgroundService
+public class QueueProducerSample<T> : BackgroundService
 {
     public IConfiguration Configuration { get; }
 
@@ -26,11 +26,11 @@ public class QueueProducerSample : BackgroundService
         {
             var send = await client.SendMessageAsync(
                 DateTime.UtcNow.ToString("s"),
-                TimeSpan.FromSeconds(20),
+                TimeSpan.FromSeconds(15),
                 TimeSpan.FromHours(1),
                 stoppingToken);
 
-            Console.WriteLine($"send {send.Value.MessageId}");
+            Console.WriteLine($"{typeof(T).Name} send {send.Value.MessageId}");
 
             await Task.Delay(3000, stoppingToken);
         }
